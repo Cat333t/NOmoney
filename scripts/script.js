@@ -47,7 +47,7 @@ let particlesConfig = {
     },
     "line_linked": {
       "enable": false,
-      "distance": 300,
+      "distance": 150,
       "color": "#000",
       "opacity": 0.4,
       "width": 2
@@ -109,6 +109,10 @@ let particlesConfig = {
   "retina_detect": true
 }
 
+function particlesRefresh() {
+    window.pJSDom[0].pJS = particlesConfig;
+    window.pJSDom[0].pJS.fn.particlesRefresh();
+}
 
 //dark mode
 const themeToggle = document.querySelector(".theme-toggle").querySelector("input");
@@ -142,12 +146,28 @@ themeToggle.addEventListener("change", () => {
 
     if (document.documentElement.getAttribute("data-theme") === "dark") {
         particlesConfig.particles.color.value = "#fff";
+        particlesConfig.particles.line_linked.color = "#fff";
     } else {
         particlesConfig.particles.color.value = "#000";
+        particlesConfig.particles.line_linked.color = "#000";
     }
     // Update particles color
-    window.pJSDom[0].pJS.particles.color.value = particlesConfig.particles.color.value;
-    window.pJSDom[0].pJS.fn.particlesRefresh();
+    particlesRefresh();
 });
 
+document.querySelectorAll(".logo").forEach((logo) => {
+    logo.addEventListener("click", () => {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+            particlesConfig.particles.line_linked.enable = !particlesConfig.particles.line_linked.enable;
+            particlesConfig.particles.line_linked.color = "#fff";
+        } else {
+            particlesConfig.particles.line_linked.enable = !particlesConfig.particles.line_linked.enable;
+            particlesConfig.particles.line_linked.color = "#000";
+        }
+
+        particlesRefresh();
+    });
+})
+
 particlesJS("particles-js", particlesConfig);
+

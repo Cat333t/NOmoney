@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Spray+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oi&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Spray+Paint&display=swap');
 
 :root {
     --white: #fff;
@@ -86,13 +86,13 @@ header {
 nav {
     position: relative;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 800;
 }
 
 nav::after {
     position: absolute;
-    bottom: 0;
+    bottom: 6px;
     left: 50%;
     content: "";
     display: block;
@@ -111,6 +111,8 @@ nav.active::after {
 
 nav a {
     text-decoration: none;
+    font-family: "Oi", sans-serif;
+    font-weight: 1;
     color: var(--black);
 }
 
@@ -220,8 +222,8 @@ main {
 }
 
 .container h1 {
-    font-family: "Rubik Spray Paint", cursive;
-    font-weight: 10;
+    font-family: "Rubik Spray Paint", sans-serif;
+    font-weight: 100;
     font-size: 8rem;
     color: var(--black);
     margin-bottom: 20px;
@@ -365,6 +367,8 @@ footer p {
     align-items: center;
     background-color: var(--black);
     border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid var(--white);
 }
 
 [data-theme="dark"] .theme-toggle-container svg {
