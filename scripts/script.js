@@ -110,7 +110,7 @@ let particlesConfig = {
 }
 
 function particlesRefresh() {
-    window.pJSDom[0].pJS = particlesConfig;
+    window.pJSDom[0].pJS.particles = particlesConfig.particles;
     window.pJSDom[0].pJS.fn.particlesRefresh();
 }
 
