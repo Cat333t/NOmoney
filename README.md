@@ -57,3 +57,8 @@
 
 ### 🏦 NOmoney  
 *Your money, not ours. Always.*
+
+### License
+This project is released under the [MIT License](./LICENSE.md).
+
+Copyright (c) 2025 Cat333t
